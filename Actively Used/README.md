@@ -2,7 +2,7 @@
 
 ## Current NUC BIOS Revision
 
-BECFL357.86A.0087.2020.1209.1115
+BECFL357.86A.0088.2021.0330.1431
 
 ## Current Clover Version Installed
 
