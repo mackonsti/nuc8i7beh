@@ -39,16 +39,16 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 * `UseARTFrequency` → key is set to `false` explicitly as Clover does _not_ need to calculate the correct Skylake new base frequency
 * `HDMIInjection` → key is set to `false` explicitly as we need to disable the injection of HDMI device properties
 * `LANInjection` → by default, Clover injects the `built-in` property of a LAN card, but we need to prevent this
-* `NoDefaultProperties` → key is set to `false` explicitly as we wish to inject our `Properties` outside the scope of `FakeID` key
+* `NoDefaultProperties` → key set to `false` explicitly; we wish to inject own `Properties` outside the scope of Clover's `FakeID` key
 * `FixOwnership` → not relevant for UEFI booting; gives USB ownership to the OS instead, as BIOS usually retains control
 * `UseIntelHDMI` → not used; injects `hda-gfx=onboard-1` in `GFX0` and `HDEF` devices already done by **AppleALC** and **WhateverGreen**
-* **`ProvideConsoleGop`** → esnsures Graphics Output Protocol or 'GOP' is available on the console handle
+* **`ProvideConsoleGop`** → ensures Graphics Output Protocol or 'GOP' is available on the console handle
 * `AppleIntelCPUPM` → not used; prevents kernel panics and allows native power management on older CPUs with MSR `0xE2` locked
 * `AppleRTC` → not used; fixes BIOS CMOS issues where each wake after sleep and reboot results to a reset, while losing BIOS settings
 * `DellSMBIOSPatch` → not used; fixes the issue where the UEFI BIOS tampers with the finished SMBIOS and prevents system boot
 * `EightApple` → not needed; attempts to fix the boot screen Apple logo that may break at some point to multiple logos on-screen
 * `KernelLapic` → not used; mostly for HP notebooks with Local APIC problems, otherwise solved by using the boot argument `cpus=1`
-* **`KernelPm`** → the only patch needed in `KernelAndKextPatches` category as MSR `0xE2` cannot be unlocked on this laptop
+* **`KernelPm`** → the only patch needed in `KernelAndKextPatches` category as MSR `0xE2` cannot be unlocked on this computer
 * `KernelXCPM` → not used; as XCPM support for IvyBridge processors has been discontinued in 10.12, this setting brings back XCPM
 * **`PanicNoKextDump`** → avoids kext-dumping in a panic situation for diagnosing problems
 * **`RtVariables`** → defines a custom ROM value as Clover's auto-detection fails in our case
