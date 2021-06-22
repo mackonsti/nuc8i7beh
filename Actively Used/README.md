@@ -22,23 +22,42 @@ To confirm that the injected value works persistently across reboots, one can ei
 Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides any device renaming. Most notably, the following keys are used:
 
 **Enabled ACPI/Boot/Kernel/System Options**
-* `AddMCHC` (setting now moved across in **SSDT-APPLE.aml** instead)
-* `DeleteUnused` (no longer used; it normally deletes legacy devices from ACPI table)
-* `FixRegions` (reportedly improves LAN stability)
-* `FixHeaders` (sanitizes headers to avoid kernel panics related to unprintable characters)
-* `PluginType` (allows native CPU power management by macOS)
-* `NeverHibernate` (improves overall sleep behaviour)
-* `NoEarlyProgress` (hides any verbose pre-boot output on the screen)
-* `HWPEnable` (Intel Speed Shift technology, known as Hardware P-State or Hardware Controlled Performance)
-* `KernelPm` (the only patch needed in `KernelAndKextPatches` category as MSR `0xE2` cannot be unlocked)
-* `PanicNoKextDump` (avoids kext-dumping in a panic situation for diagnosing problems)
-* `RtVariables` (define a custom ROM value as Clover's auto-detection fails)
-* `InjectKexts` (needed as all kexts reside in EFI folder now)
-* `InjectSystemID` (sets the SmUUID as the 'system-id' at boot)
+* `AddMCHC` → no longer used; creates `MCHC` device in IORegistry but this fix has now moved across in **SSDT-APPLE.aml** instead
+* `DeleteUnused` → no longer used; it normally deletes legacy devices from ACPI tables
+* **`FixHeaders`** → sanitizes all ACPI headers to avoid kernel panics related to unprintable characters
+* `FixRegions` → no longer used; it fixes `OperationRegion` addresses assigned by the BIOS dynamically when custom DSDTs are used
+* `DisableASPM` → no longer used; affects Apple's ASPM management if not working e.g. on non-supported chipsets
+* `FixMCFG` → not used; fixes MCFG table instead of dropping it; MCFG describes the location of PCI Express configuration space
+* `HaltEnabler` → not used; this UEFI boot-time fix concerns problems shutting down or going to sleep
+* `PatchAPIC` → not used; the system boots without the need for argument `cpus=1` due to a bad MADT table
+* `APLF` and `APSN` → not used; these are only needed to tamper with Intel SpeedStep, needing `PStates` also set to true
+* **`PluginType`** → allows native CPU power management by macOS on IvyBridge and newer
+* **`NeverHibernate`** → improves overall sleep behaviour as it disables the hibernation state detection
+* **`NoEarlyProgress`** → hides any verbose pre-boot output on the screen
+* `XMPDetection` → no longer used; detects XMP profiles of installed RAM at boot-time; this is also BIOS-dependent
+* **`HWPEnable`** → enables Intel Speed Shift technology, known as Hardware P-State or Hardware Controlled Performance
+* `UseARTFrequency` → key is set to `false` explicitly as Clover does _not_ need to calculate the correct Skylake new base frequency
+* `HDMIInjection` → key is set to `false` explicitly as we need to disable the injection of HDMI device properties
+* `LANInjection` → by default, Clover injects the `built-in` property of a LAN card, but we need to prevent this
+* `NoDefaultProperties` → key is set to `false` explicitly as we wish to inject our `Properties` outside the scope of `FakeID` key
+* `FixOwnership` → not relevant for UEFI booting; gives USB ownership to the OS instead, as BIOS usually retains control
+* `UseIntelHDMI` → not used; injects `hda-gfx=onboard-1` in `GFX0` and `HDEF` devices already done by **AppleALC** and **WhateverGreen**
+* **`ProvideConsoleGop`** → esnsures Graphics Output Protocol or 'GOP' is available on the console handle
+* `AppleIntelCPUPM` → not used; prevents kernel panics and allows native power management on older CPUs with MSR `0xE2` locked
+* `AppleRTC` → not used; fixes BIOS CMOS issues where each wake after sleep and reboot results to a reset, while losing BIOS settings
+* `DellSMBIOSPatch` → not used; fixes the issue where the UEFI BIOS tampers with the finished SMBIOS and prevents system boot
+* `EightApple` → not needed; attempts to fix the boot screen Apple logo that may break at some point to multiple logos on-screen
+* `KernelLapic` → not used; mostly for HP notebooks with Local APIC problems, otherwise solved by using the boot argument `cpus=1`
+* **`KernelPm`** → the only patch needed in `KernelAndKextPatches` category as MSR `0xE2` cannot be unlocked on this laptop
+* `KernelXCPM` → not used; as XCPM support for IvyBridge processors has been discontinued in 10.12, this setting brings back XCPM
+* **`PanicNoKextDump`** → avoids kext-dumping in a panic situation for diagnosing problems
+* **`RtVariables`** → defines a custom ROM value as Clover's auto-detection fails in our case
+* **`InjectKexts`** → needed to be `true` as all kexts reside in EFI partition now
+* **`InjectSystemID`** → sets the SmUUID as the 'system-id' at boot-time
+
+**N.B.** To overcome the MSR `0xE2` (Cfg Lock) issue, we use `KernelPM` as it deals with Ivy Bridge CPUs (in XCPM mode) and newer, whereas `AppleIntelCPUPM` deals with older CPU generations up to IvyBridge.
 
 **Note:** User [slice](https://www.insanelymac.com/forum/profile/112217-slice/) (one of the Clover developers) confirmed that `DeleteUnused` deletes such legacy devices as `CRT_`, `DVI_`, `SPKR`, `ECP_`, `LPT_`, `FDC_` that _no longer_ exist in modern motherboards, including this NUC.
-
-**Note:** To overcome the MSR `0xE2` (Cfg Lock) issue, we use `KernelPM` as it deals with Ivy Bridge CPUs (in XCPM mode) and newer, whereas `AppleIntelCPUPM` deals with older CPU generations up to IvyBridge.
 
 **Clover Device Properties**
 * Define graphics `AAPL,ig-platform-id` for Intel Iris Plus 655
@@ -51,20 +70,20 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 
 **Renamed Devices**
 * `_DSM` to `XDSM`
-* `_OSI` to `XOSI` (used in conjunction with **SSDT-XOSI.aml**)
+* `_OSI` to `XOSI` → used in conjunction with **SSDT-XOSI.aml**
 * `_RMV` to `XRMV`
-* `GFX0` to `IGPU` (although **WhateverGreen** can do that, too)
+* `GFX0` to `IGPU` → although **WhateverGreen** can do that, too
 * `GLAN` to `GIGE`
-* `HDAS` to `HDEF` (although **AppleALC** can do that, too)
-* `HECI` to `IMEI` (although **WhateverGreen** can do that, too)
+* `HDAS` to `HDEF` → although **AppleALC** can do that, too
+* `HECI` to `IMEI` → although **WhateverGreen** can do that, too
 * `SAT0` to `SATA`
-* `_STA` to `XSTA` in Device `H_EC` (allows disabling original `H_EC` device)
-* `_SB.PCI0.RP05.PXSX` to `UPSB` (the internal USB-C device)
-* `_SB.PCI0.RP09.PXSX` to `NVME` (the internal NVMe device)
+* `_STA` to `XSTA` in Device `H_EC` → allows disabling original `H_EC` device
+* `_SB.PCI0.RP05.PXSX` to `UPSB` → renames the internal USB-C device
+* `_SB.PCI0.RP09.PXSX` to `NVME` → renames the internal NVMe device
 
 **Note:** Since Clover r5131 the `RenameDevices` section of **config.plist** requires an `<array>` with `<dict>` entries per device. Subsequent Clover releases will understand the previous **config.plist** layout; however do _not_ use this newer **config.plist** layout with older Clover releases as this may cause Clover to crash.
 
-## Current SSDTs Used
+## Current SSDTs Used :white_check_mark:
 
 **SSDT-APPLE.aml**<br/>
 Adds native vanilla `Device (DMAC)` and `Device (FWHD)` like a real Mac.
