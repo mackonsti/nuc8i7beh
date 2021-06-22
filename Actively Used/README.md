@@ -1,6 +1,6 @@
 # Actively Used Files
 
-## Current NUC BIOS Revision
+## Current NUC BIOS Revision Flashed
 
 BECFL357.86A.0088.2021.0330.1431
 
@@ -12,16 +12,19 @@ These files have been running without issues on the official Clover **r5123.1** 
 
 It is important to generate a personalised SMBIOS using `Macmini8,1` as target model. To complete the Clover configuration section for SMBIOS (namely `MLB`, `BoardSerialNumber`, `SerialNumber` and `SmUUID` keys) it is advised to use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) scripts and add the generated values in the respective places in `config.plist` file.
 
-**Important Update:** It seems that the firmware of this NUC _cannot_ provide to Clover the MAC address of the embedded network controller, thus rendering **ROM** setting `UseMacAddr0` invalid. This is evident when checking `preboot.log` in Clover via F2 on keyboard. Since a _unique_ number is required for this parameter in **RtVariables** the recommended method is to take the 12 digits from the **en0** network controler (without the colons) and convert them to [Base64](https://cryptii.com/pipes/hex-to-base64) for use as `<data>` under `<key>ROM</key>` in the Clover configuration file. Read more over at [Dortania](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#fixing-rom).
+**Important Update:** It seems that the firmware of this NUC _cannot_ provide to Clover the MAC address of the embedded network controller, thus rendering **ROM** setting `UseMacAddr0` invalid. This is evident when checking `preboot.log` in Clover via F2 on keyboard.
+
+Since a _unique_ number is required for this parameter in **RtVariables** the recommended method is to take the 12 digits from the **en0** network controler (without the colons) and convert them to [Base64](https://cryptii.com/pipes/hex-to-base64) for use as `<data>` under `<key>ROM</key>` in the Clover configuration file. Read more over at [Dortania](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#fixing-rom).
 
 To confirm that the injected value works persistently across reboots, one can either run in Terminal [iMessageDebug](https://mac.softpedia.com/get/System-Utilities/iMessageDebug.shtml) or the command:<br/>
 `nvram -x 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14:ROM` and verify the output.
 
 ## Current Clover Configuration
 
-Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides any device renaming. Most notably, the following keys are used:
+Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides any device renaming. Most notably, the following keys are considered:
 
 **Enabled ACPI/Boot/Kernel/System Options**
+
 * `AddMCHC` → no longer used; creates `MCHC` device in IORegistry but this fix has now moved across in **SSDT-APPLE.aml** instead
 * `DeleteUnused` → no longer used; it normally deletes legacy devices from ACPI tables
 * **`FixHeaders`** → sanitizes all ACPI headers to avoid kernel panics related to unprintable characters
@@ -42,7 +45,7 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 * `NoDefaultProperties` → key set to `false` explicitly; we wish to inject own `Properties` outside the scope of Clover's `FakeID` key
 * `FixOwnership` → not relevant for UEFI booting; gives USB ownership to the OS instead, as BIOS usually retains control
 * `UseIntelHDMI` → not used; injects `hda-gfx=onboard-1` in `GFX0` and `HDEF` devices already done by **AppleALC** and **WhateverGreen**
-* **`ProvideConsoleGop`** → ensures Graphics Output Protocol or 'GOP' is available on the console handle
+* **`ProvideConsoleGop`** → ensures that Graphics Output Protocol or 'GOP' is available on the console handle
 * `AppleIntelCPUPM` → not used; prevents kernel panics and allows native power management on older CPUs with MSR `0xE2` locked
 * `AppleRTC` → not used; fixes BIOS CMOS issues where each wake after sleep and reboot results to a reset, while losing BIOS settings
 * `DellSMBIOSPatch` → not used; fixes the issue where the UEFI BIOS tampers with the finished SMBIOS and prevents system boot
@@ -60,15 +63,18 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 **Note:** User [slice](https://www.insanelymac.com/forum/profile/112217-slice/) (one of the Clover developers) confirmed that `DeleteUnused` deletes such legacy devices as `CRT_`, `DVI_`, `SPKR`, `ECP_`, `LPT_`, `FDC_` that _no longer_ exist in modern motherboards, including this NUC.
 
 **Clover Device Properties**
+
 * Define graphics `AAPL,ig-platform-id` for Intel Iris Plus 655
 * Define an `acpi-wake-type` value for XHCI controller
 * Define a compatible SATA controller (`pci8086,9d03` as "Intel 10 Series Chipset")
 * Define a compatible NVMe controller (_optional_ `pci144d,a804` for Samsung NVMe SSD)
-* Define a compatible `ec-device` for the LPC controller to report FAN speeds
+* Define a compatible `ec-device` for the LPC controller to report CPU fan readings
 * Define audio `layout-id` for Realtek ALC235 Audio Controller
-* Define a compatible Thermal Controller device (`pci8086,9d21` for device [[8086:9df9]](https://pci-ids.ucw.cz/read/PC/8086/9df9))
+
+**N.B.** The original idea of defining a compatible Thermal Controller device (such as `pci8086,9d21` for detected Intel device [[8086:9df9]](https://pci-ids.ucw.cz/read/PC/8086/9df9)) was _dropped_ as there appears no real compatibility.
 
 **Renamed Devices**
+
 * `_DSM` to `XDSM`
 * `_OSI` to `XOSI` → used in conjunction with **SSDT-XOSI.aml**
 * `_RMV` to `XRMV`
@@ -89,7 +95,7 @@ Most of the configuration keys are set to **false** thus making a minimum needed
 Adds native vanilla `Device (DMAC)` and `Device (FWHD)` like a real Mac.
 
 **SSDT-AWAC.aml**<br/>
-Bypass the newer BIOS real-time clock `Device (AWAC)` that is meant as a replacement of `(RTC)`, by setting **STAS** variable to `One`. This is a much cleaner solution compared to any DSDT "hot-patching" that replaces bytes in a specific sequence.
+Bypasses the newer BIOS real-time clock `Device (AWAC)` that works as a replacement of `Device (RTC)` by injecting **STAS** value as **One**. This is a cleaner solution to any DSDT hot-patching by replacing bytes in a specific sequence.
 
 **SSDT-EC-USBX.aml**<br/>
 As this is a desktop computer despite using some mobile components, it is advised to disable device `EC`, `EC0` or `H_EC` instead of renaming it. Via a special DSDT hot-patch that allows for a custon `Method (_STA)`, the original device `(H_EC)` is disabled and a fake, needed `Device (EC)` is injected.
@@ -100,20 +106,20 @@ At the same time, needed `Device (USBX)` is injected with USB port(s) power supp
 As the presence of High Precision Event Timer `Device (HPET)` may cause performance drop(s) in certain situations, setting **HPTE** variable to `Zero` disables natively `(HPET)` in the firmware.
 
 **SSDT-NAMES.aml**<br/>
-This injects device names to otherwise unnamed IORegistry devices, simply because they are not defined in the original DSDT of the BIOS. Although not needed for a functional macOS, these are mainly done for aesthetic reasons.
+This injects device names to otherwise unnamed IORegistry devices, simply because they are not defined in the original DSDT of the BIOS. Although not critical for a functional macOS, these are mainly done for aesthetic reasons.
 
 **SSDT-PMCR.aml**<br/>
-Injects the native vanilla `Device (PMCR)` that is accessed by the **AppleIntelPCHPMC** driver and unlocking the use of NVRAM if otherwise not already done by the BIOS.
+Injects the native vanilla `Device (PMCR)` that is accessed by the **AppleIntelPCHPMC** driver that unlocks, as reported, the use of NVRAM if otherwise not already done by the BIOS.
 
 **SSDT-SBUS.aml**<br/>
-To simulate a real Mac, two sub-devices are injected in the existing SMBus device, namely `(BUS0)` and `(BUS1)`. Although these may not appear in IORegistry, they do exist in the original DSDT of a modern Mac.
+To simulate a real Mac, two sub-devices are injected in the existing SMBus device, namely `Device (BUS0)` and `Device (BUS1)`. Although these do _not_ appear in IORegistry Explorer, they do exist in the original DSDT of a modern Mac.
 
 **SSDT-XOSI.aml**<br/>
-Combined with the needed Clover configuration patch (replacing `_OSI` with `XOSI`) this allows to simulate a Windows system running, thus getting increased compatibility in general.
+Combined with the needed DSDT patching (replacing `_OSI` with `XOSI`) this allows to simulate a Windows system running, thus getting increased compatibility in general.
 
 ## Note regarding USBPorts.kext generated with Hackintool
 
-This NUC has four visible USB ports and they are all USB 3.1 connectors, except the two *internal* headers that are USB 2.0 connectors (and disabled in BIOS). This is why **USBPorts.kext** contains and defines both **HSxx** and **SS0x** types of ports as being of `UsbConnector` type "3" because it reflects the actual *electrical* connector.
+This NUC has **four** visible USB ports and they are all USB 3.1 connectors, except the two *internal* headers that are USB 2.0 connectors (and disabled in BIOS). This is why **USBPorts.kext** contains and defines both **HSxx** and **SS0x** types of ports as being of `UsbConnector` type "3" because it reflects the actual *electrical* connector.
 
 ## Update: Added Thunderbold SSDT code
 
