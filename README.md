@@ -42,9 +42,9 @@ https://www.intel.com/content/www/us/en/support/articles/000005805/mini-pcs.html
 
 ## Product Overview
 
-![FrontPanel.jpg](Various/FrontPanel.jpg)
+![FrontPanel](Various/FrontPanel.jpg)
 
-![RearPanel.jpg](Various/RearPanel.jpg)
+![RearPanel](Various/RearPanel.jpg)
 
 ## Compatible Models
 
@@ -72,6 +72,7 @@ BIOS Revision: MM81.88Z.F000.B00.1907261958<br/>
 BIOS Revision: MM81.88Z.F000.B00.2001052107<br/>
 BIOS Revision: MM81.88Z.F000.B00.2005132145<br/>
 BIOS Revision: MM81.88Z.F000.B00.2101062036<br/>
+BIOS Revision: MM81.88Z.F000.B00.2105212325<br/>
 
 ## Current Setup
 
@@ -91,7 +92,7 @@ The embedded 802.11ac wireless 9560 chipset [8086:9df0] has been working without
 
 ## Required BIOS Settings
 
-For the most basic but _required_ BIOS settings, as well as previous firmware releases, see [BIOS](BIOS/) folder.
+For the essential but _required_ BIOS settings, as well as previous firmware releases, see [BIOS](BIOS/) folder.
 
 ## Active Configuration
 
@@ -105,6 +106,7 @@ For the most basic but _required_ BIOS settings, as well as previous firmware re
 * Embedded Intel LAN interface works with [IntelMausi](https://github.com/acidanthera/IntelMausi/releases);
 * Embedded Intel WLAN module works with [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm/releases);
 * Embedded Intel BTLE module detected with [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases);
+* CPU fan readings work with `ec-device` as `Intel_EC_V8` with [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases);
 * Integrated SD Card reader is not compatible; it is disabled in BIOS;
 * Sleep/Wake both work without issues; see "Power" section in [Hackintool](https://github.com/headkaze/Hackintool/releases);
 * Both NVMe and SSD SATA interfaces work with no effort nor kext needed.
@@ -152,6 +154,12 @@ Read more at [Intel® HD Graphics FAQs](https://github.com/acidanthera/WhateverGr
 The above active and working USB ports are listed in Hackintool when the two *internal* (USB 2.0) headers and **Consumer IR** are all _disabled_ in [BIOS](BIOS/) and when **all unused or non-referenced USB ports** are removed. In any other situation, ports such as HS05, HS06, HS07, HS08, HS09, USR1, USR2, SS05 and SS06 may be listed. All ports above are defined in `USBPorts.kext` according to their _electrical_ connector.
 
 ![USBPorts](Various/USBPorts.png)
+
+## CPU Fan Reading Support
+
+Support for the NUC's embedded chipset **ITE IT8987E-VG** has been added in [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) (and more specifically `SMCSuperIO.kext`) since version 1.2.2 thanks to its developers. The required method is to inject the needed property `<key>ec-device</key>` and the correct identifier that corresponds to the NUC's model/generation own **LPC Controller** device (see [here](https://github.com/acidanthera/VirtualSMC/blob/master/Docs/EmbeddedControllers.md)). For this NUC, the value is `<string>Intel_EC_V8</string>` thus enabling CPU fan readings in any monitoring tool.
+
+![SMCSuperIO](Various/SMCSuperIO.png)
 
 ![AmorphousDiskMark](Various/AmorphousDiskMark.png)
 
