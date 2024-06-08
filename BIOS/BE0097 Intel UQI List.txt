@@ -1,0 +1,1870 @@
+               I N T E L ®   I N T E G R A T O R   T O O L K I T 
+
+                         System Information Report
+                         Wed Feb 21 03:17:29 PM
+
+*******************************************************************************
+My System
+*******************************************************************************
+
+BIOS File Location	 D:\BE_File\BE_ReleasePackage\BECFL357.86A.0097\BIO\BE0097.bio
+BIOS ID			 BECFL357.86A.0097.2024.0221.1015
+BIOS Date		 21/02/2024
+
+*******************************************************************************
+BIOS Settings
+*******************************************************************************
+
+
+[07cc] - CHECK BOX 
+
+		Clear Event Log
+		-------------------------------------------------------------------------------
+		Enable to clear the Event Log at next boot.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07cd] - CHECK BOX 
+
+		Event Logging
+		-------------------------------------------------------------------------------
+		Enables or Disables Event Logging.  If Enabled, BIOS will log POST Errors in NVRAM.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07a3] - CHECK BOX 
+
+		USB Legacy
+		-------------------------------------------------------------------------------
+		USB Legacy allows USB support under non-USB-aware OSes.
+Disabling USB Legacy will not disable USB keyboards during BIOS POST, including BIOS SETUP and Option ROMs.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[078f] - ONE_OF 
+
+		  Portable Device Charging Mode
+		-------------------------------------------------------------------------------
+		USB ports that are colored yellow support a Portable Device Charging Mode with higher maximum current.?Off: USB Port will not provide extra power during system sleep states.
+Charging in S3/S4/S5: USB Port will provide extra power during system sleep states.
+Charging Only: USB Port will always provide extra power but cannot be used to transfer data with USB 2.0 device.
+			0  :  OFF
+			1  :  Charging in S3/S4/S5    (default)
+			2  :  Charging Only
+
+[05b1] - ONE_OF 
+
+		USB2 Header Connector 1:
+		-------------------------------------------------------------------------------
+		USB Ports 5 & 6 are located internally on a USB header.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[05b0] - ONE_OF 
+
+		USB2 Header Connector 2:
+		-------------------------------------------------------------------------------
+		USB Ports 5 & 6 are located internally on a USB header.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[05ae] - ONE_OF 
+
+		USB3 Front Port:
+		-------------------------------------------------------------------------------
+		USB Ports 3 & 4 are located on the front panel.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[05af] - ONE_OF 
+
+		USB3 Front Charging Port:
+		-------------------------------------------------------------------------------
+		USB Ports 3 & 4 are located on the front panel.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[05ad] - ONE_OF 
+
+		USB3 Rear Upper Port:
+		-------------------------------------------------------------------------------
+		USB Ports 1 & 2 are located on the back panel.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[05ac] - ONE_OF 
+
+		USB3 Rear Lower Port:
+		-------------------------------------------------------------------------------
+		USB Ports 1 & 2 are located on the back panel.?Enable: All devices on this port will be available to BIOS and OS.
+Disable: Only keyboards will be available to BIOS, and all devices on this port will be unavailable to OS.  
+No Detect: No devices on this port will be detected by BIOS, but all will be available to OS.  Use this option to speed up BIOS boot.
+			1  :  Enable    (default)
+			0  :  Disable
+			2  :  No Detect
+
+[07b8] - CHECK BOX 
+
+		Chipset SATA
+		-------------------------------------------------------------------------------
+		The Chipset SATA controller supports the internal black SATA port and M.2 SATA port.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0063] - ONE_OF 
+
+		 Chipset SATA Mode
+		-------------------------------------------------------------------------------
+		Configures the Chipset SATA controller mode.?Warning: OS may not boot if this setting is changed after OS install.?AHCI: Supports advanced SATA features such as Native Command Queuing.?RAID: Allows multiple drives to be merged into larger volumes for increased performance and/or reliability. Always enables AHCI.?Intel RST Premium With Intel Optane System Acceleration: Fast Boot will be Grayed-out and disabled under Optane mode.?Warning: OS may not boot if this setting is changed after OS install.
+			1  :  RAID
+			2  :  AHCI    (default)
+			3  :  Intel® RST Premium With Intel® Optane? System Acceleration
+
+[0063] - ONE_OF 
+
+		 Chipset SATA Mode
+		-------------------------------------------------------------------------------
+		Configures the Chipset SATA controller mode.?Warning: OS may not boot if this setting is changed after OS install.?AHCI: Supports advanced SATA features such as Native Command Queuing.?RAID: Allows multiple drives to be merged into larger volumes for increased performance and/or reliability. Always enables AHCI.?Intel RST Premium With Intel Optane System Acceleration: Fast Boot will be Grayed-out and disabled under Optane mode.?Warning: OS may not boot if this setting is changed after OS install.
+			1  :  RAID
+			2  :  AHCI    (default)
+
+[0961] - CHECK BOX 
+
+		RST PCIe Storage Remapping
+		-------------------------------------------------------------------------------
+		Configures the PCIe storage remapping.
+Warning: OS may not boot if this setting is changed after OS install.
+			0  :  Disabled    (default)
+			1  :  Enabled
+
+[0961] - CHECK BOX 
+
+		RST PCIe Storage Remapping
+		-------------------------------------------------------------------------------
+		Configures the PCIe storage remapping.
+Warning: OS may not boot if this setting is changed after OS install.
+			0  :  Disabled    (default)
+			1  :  Enabled
+
+[07ba] - CHECK BOX 
+
+		  S.M.A.R.T.
+		-------------------------------------------------------------------------------
+		Enables or Disables S.M.A.R.T - Self-Monitoring, Analysis, and Reporting Technology 
+If supported on any attached drives, BIOS will monitor drive health.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0948] - CHECK BOX 
+
+		SATA Port
+		-------------------------------------------------------------------------------
+		Enables or Disables SATA Port
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0086] - NUMERIC 
+
+		Hard Disk Pre-Delay
+		-------------------------------------------------------------------------------
+		Delay (in seconds) before hard drives are initialized.  This can be used to increase the amount of time that the BIOS Splash Screen displays.
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  30 
+
+[095c] - CHECK BOX 
+
+		HDD Activity LED
+		-------------------------------------------------------------------------------
+		Determines HDD Activity LED behavior during S0 system power state.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0945] - CHECK BOX 
+
+		M.2 PCIe SSD LED
+		-------------------------------------------------------------------------------
+		Allows SSD activity from PCIe-based M.2 storage card to be indicated by the chassis? HDD activity LED.  PCIe-based M.2 storage card must provide SSD activity LED signal in order to support this feature, as no activity would be detected otherwise.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0836] - ONE_OF 
+
+		IGD Minimum Memory
+		-------------------------------------------------------------------------------
+		Selects the minimum amount of system memory allocated to the Integrated Graphics Device (IGD).
+The maximum amount of memory allocated is determined by the operating system and video driver.
+			1  :  32 MB
+			2  :  64 MB    (default)
+
+[0083] - ONE_OF 
+
+		IGD Aperture Size
+		-------------------------------------------------------------------------------
+		Selects the aperture size for the Integrated Graphics Device (IGD).
+			0  :  128 MB
+			1  :  256 MB    (default)
+			3  :  512 MB
+			7  :  1024 MB
+
+[0083] - ONE_OF 
+
+		IGD Aperture Size
+		-------------------------------------------------------------------------------
+		Selects the aperture size for the Integrated Graphics Device (IGD).
+			0  :  128 MB
+			1  :  256 MB    (default)
+			3  :  512 MB
+			7  :  1024 MB
+
+[05fe] - ONE_OF 
+
+		IGD Primary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST. 
+Auto will attempt to detect connected monitors, and will display video on a maximum of two ports.
+			0  :  Auto    (default)
+			5  :  HDMI
+			8  :  Thunderbolt
+
+[05ff] - ONE_OF 
+
+		IGD Secondary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for mirrored Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST.
+			0  :  None    (default)
+			8  :  Thunderbolt
+
+[05ff] - ONE_OF 
+
+		IGD Secondary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for mirrored Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST.
+			0  :  None    (default)
+			5  :  HDMI
+			8  :  Thunderbolt
+
+[05ff] - ONE_OF 
+
+		IGD Secondary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for mirrored Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST.
+			0  :  None    (default)
+			5  :  HDMI
+
+[05fe] - ONE_OF 
+
+		IGD Primary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST. 
+Auto will attempt to detect connected monitors, and will display video on a maximum of two ports.
+			0  :  Auto    (default)
+			5  :  HDMI
+
+[05ff] - ONE_OF 
+
+		IGD Secondary Video Port
+		-------------------------------------------------------------------------------
+		Selects preference for mirrored Integrated Graphics Device (IGD) display interface used for environments without a graphics driver, such as POST.
+			0  :  None    (default)
+			5  :  HDMI
+
+[07ad] - CHECK BOX 
+
+		Audio
+		-------------------------------------------------------------------------------
+		Enables or Disables Onboard Audio.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07ae] - CHECK BOX 
+
+		  HDMI/DisplayPort Audio
+		-------------------------------------------------------------------------------
+		If enabled, HDMI/DisplayPort output includes both audio and video.  If disabled, HDMI/DisplayPort output is video only.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[090c] - CHECK BOX 
+
+		Digital Microphone
+		-------------------------------------------------------------------------------
+		Enables or Disables Digital Microphone support that is part of the Custom Solutions Header
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07af] - CHECK BOX 
+
+		LAN
+		-------------------------------------------------------------------------------
+		Enables or Disables the Onboard LAN Controller.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07b2] - CHECK BOX 
+
+		Thunderbolt? Controller
+		-------------------------------------------------------------------------------
+		Enables or Disables the Onboard Thunderbolt? Controller.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0934] - CHECK BOX 
+
+		WLAN
+		-------------------------------------------------------------------------------
+		Enables or Disables the Onboard WLAN Controller.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0935] - CHECK BOX 
+
+		Bluetooth
+		-------------------------------------------------------------------------------
+		Enables or Disables the Onboard Bluetooth Controller.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0947] - ONE_OF 
+
+		SD Card
+		-------------------------------------------------------------------------------
+		Allows users to read/write to or disable the SD card reader
+			0  :  Disable
+			2  :  Read/Write    (default)
+
+[07ac] - CHECK BOX 
+
+		Enhanced Consumer IR
+		-------------------------------------------------------------------------------
+		Enables or Disables Enhanced Consumer Infrared (CIR)
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0994] - ONE_OF 
+
+		Auto Turn Off TV
+		-------------------------------------------------------------------------------
+		Auto Turn Off TV
+			0  :  Disable    (default)
+			1  :  When S0 to S3/S4/S5
+			2  :  When S0 to S3
+			3  :  When S0 to S4/S5
+
+[0995] - ONE_OF 
+
+		Wake On TV
+		-------------------------------------------------------------------------------
+		Wake On TV
+			0  :  Disable    (default)
+			1  :  From S3/S4/S5
+			2  :  From S3
+			3  :  From S4/S5
+
+[0996] - ONE_OF 
+
+		Standby by TV
+		-------------------------------------------------------------------------------
+		Standby by TV
+			0  :  Disable    (default)
+			1  :  Power Button Toggle
+			2  :  Sleep Button Toggle
+
+[0828] - CHECK BOX 
+
+		High Precision Event Timers
+		-------------------------------------------------------------------------------
+		High Precision Event Timers are integrated into chipset hardware and are available for use by operating systems. 
+They can be disabled if incompatible with an OS or application.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07b5] - CHECK BOX 
+
+		Num Lock
+		-------------------------------------------------------------------------------
+		If Num Lock is enabled, the keypad defaults to numeric functionality.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0964] - CHECK BOX 
+
+		M.2 Slot
+		-------------------------------------------------------------------------------
+		If enabled, the SATA port, PCIe and USB interface to the M.2 slot are enabled.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0910] - ONE_OF 
+
+		Fan Control Mode
+		-------------------------------------------------------------------------------
+		Select how the system fan is to be controlled.Quiet, Balanced and Cool are used to select a preconfigured automatic fan control profile. Custom selects the user-customizable automatic fan control profile. Fixed selects a static duty cycle for the fan.
+			0  :  Fixed
+			1  :  Custom
+			2  :  Cool
+			3  :  Balanced    (default)
+			4  :  Quiet
+			5  :  Fanless
+
+[0911] - ONE_OF 
+
+		Primary Temperature Sensor
+		-------------------------------------------------------------------------------
+		Select the Primary Temperature Input for automatic fan control
+			0  :  Processor    (default)
+			1  :  PCH
+
+[098d] - CHECK BOX 
+
+		Fan off capability
+		-------------------------------------------------------------------------------
+		Fan off capability
+			0  :  Disable
+			1  :  Enable    (default)
+
+[098e] - NUMERIC 
+
+		Fan Off Temperature (°C)
+		-------------------------------------------------------------------------------
+		Fan Off Temperature
+		Default Value is 40. 
+			 Minimum Value :  1 
+			 Maximum Value :  48 
+
+[0912] - NUMERIC 
+
+		Minimum Temperature (°C)
+		-------------------------------------------------------------------------------
+		Defines temperature that the fan control subsystem attempts to maintain for this device.
+		Default Value is 65. 
+			 Minimum Value :  1 
+			 Maximum Value :  127 
+
+[0913] - NUMERIC 
+
+		Minimum Duty Cycle (%)
+		-------------------------------------------------------------------------------
+		Selects the minimum duty cycle that the fan will never go below.
+		Default Value is 35. 
+			 Minimum Value :  1 
+			 Maximum Value :  100 
+
+[0914] - NUMERIC 
+
+		Duty Cycle Increment (%/°C)
+		-------------------------------------------------------------------------------
+		Fan control will increase fan duty cycle by this % for each degree Primary Temperature Sensor is over Minimum Temperature.
+		Default Value is 2. 
+			 Minimum Value :  1 
+			 Maximum Value :  30 
+
+[0919] - NUMERIC 
+
+		Fixed Duty Cycle (%)
+		-------------------------------------------------------------------------------
+		Selects the duty cycle that the fan will operate at.
+		Default Value is 70. 
+			 Minimum Value :  30 
+			 Maximum Value :  100 
+
+[0915] - ONE_OF 
+
+		Secondary Temperature Sensor
+		-------------------------------------------------------------------------------
+		Select the Primary Temperature Input for automatic fan control
+			2  :  Memory    (default)
+			3  :  Motherboard
+
+[0990] - NUMERIC 
+
+		Fan Off Temperature (°C)
+		-------------------------------------------------------------------------------
+		Fan Off Temperature
+		Default Value is 32. 
+			 Minimum Value :  1 
+			 Maximum Value :  55 
+
+[0916] - NUMERIC 
+
+		Minimum Temperature (°C)
+		-------------------------------------------------------------------------------
+		Defines temperature that the fan control subsystem attempts to maintain for this device.
+		Default Value is 55. 
+			 Minimum Value :  0 
+			 Maximum Value :  127 
+
+[0917] - NUMERIC 
+
+		    Minimum Duty Cycle (%)
+		-------------------------------------------------------------------------------
+		Selects the minimum duty cycle that the fan will never go below.
+		Default Value is 35. 
+			 Minimum Value :  1 
+			 Maximum Value :  100 
+
+[0918] - NUMERIC 
+
+		    Duty Cycle Increment (%/°C)
+		-------------------------------------------------------------------------------
+		Fan control will increase fan duty cycle by this % for each degree Primary Temperature Sensor is over Minimum Temperature.
+		Default Value is 2. 
+			 Minimum Value :  1 
+			 Maximum Value :  7 
+
+[0080] - ONE_OF 
+
+		User Access Level
+		-------------------------------------------------------------------------------
+		User Access Level determines the level of BIOS Setup access granted when the User Password is entered.
+			0  :  No Access
+			1  :  View Only    (default)
+			2  :  Limited
+			3  :  Full Access
+
+[07d8] - CHECK BOX 
+
+		Hard Disk Drive Password Prompt
+		-------------------------------------------------------------------------------
+		If disabled, BIOS will never prompt for an HDD password unless attempting to boot to a drive with a User HDD Password installed.?If set to Enable, BIOS will always prompt for an HDD password if a User HDD Password is installed.
+If set to Disable, BIOS will never prompt for an HDD password unless attempting to boot to a drive with a User HDD Password installed.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0804] - ONE_OF 
+
+		Unattended BIOS Configuration
+		-------------------------------------------------------------------------------
+		Configuring the BIOS via Intel® Integrator Toolkit normally requires physical presence via a keyboard response prompt.
+Enabling Secure Boot will set Unattended BIOS Configuration to Always Prompt.?Configuring the BIOS via Intel® Integrator Toolkit normally requires physical presence via a keyboard response prompt.
+This prompt can disabled temporarily or permanently, or unattended BIOS configuration can be locked out entirely.
+If set to Lock, BIOS Setup is still accessible.
+Enabling Secure Boot will set Unattended BIOS Configuration to Always Prompt.
+Once Secure Boot is enabled, Unattended BIOS Configuration can only be set to Always Prompt or Lock.
+			0  :  Always Prompt    (default)
+			1  :  Lock
+			2  :  Temporarily Skip Prompt
+			3  :  Never Prompt
+
+[0804] - ONE_OF 
+
+		Unattended BIOS Configuration
+		-------------------------------------------------------------------------------
+		Configuring the BIOS via Intel® Integrator Toolkit normally requires physical presence via a keyboard response prompt.
+Enabling Secure Boot will set Unattended BIOS Configuration to Always Prompt.?Configuring the BIOS via Intel® Integrator Toolkit normally requires physical presence via a keyboard response prompt.
+This prompt can disabled temporarily or permanently, or unattended BIOS configuration can be locked out entirely.
+If set to Lock, BIOS Setup is still accessible.
+Enabling Secure Boot will set Unattended BIOS Configuration to Always Prompt.
+Once Secure Boot is enabled, Unattended BIOS Configuration can only be set to Always Prompt or Lock.
+			0  :  Always Prompt    (default)
+			1  :  Lock
+			2  :  Temporarily Skip Prompt
+
+[07dc] - CHECK BOX 
+
+		Intel® Trusted Execution Technology
+		-------------------------------------------------------------------------------
+		Intel® TXT provides hardware-based mechanisms that may help protect against software-based attacks and protect the confidentiality and integrity of data.?If Intel® TXT is enabled, then Intel® VT, Intel® VT-d, Intel® HT Technology, all processor cores, and the onboard TPM will also be enabled.  Once Intel® TXT is enabled, it must be disabled before disabling any of these required features.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07db] - CHECK BOX 
+
+		Intel® Virtualization Technology
+		-------------------------------------------------------------------------------
+		Enables or Disables features that provide hardware support for virtualization.  Requires power cycling and specific hardware/software installed to take effect.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07dd] - CHECK BOX 
+
+		Intel® VT for Directed I/O (VT-d)
+		-------------------------------------------------------------------------------
+		Enables or Disables Intel® VT for Directed I/O (VT-d) which provides additional hardware support for managing I/O virtualization. If Enabled, BIOS will publish a DMA Remapping ACPI table.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[00f2] - ONE_OF 
+
+		Fixed Disk Boot Sector
+		-------------------------------------------------------------------------------
+		Write Protect provides some Master Boot Record protection.
+Set to Normal while installing an operating system.?Only applicable to Legacy BIOS interfaces.
+			0  :  Normal    (default)
+			1  :  Write Protect
+
+[090d] - CHECK BOX 
+
+		Intel® Platform Trust Technology
+		-------------------------------------------------------------------------------
+		Enables or Disables Intel® Platform Trust Technology
+			0  :  Disable
+			1  :  Enable    (default)
+
+[095d] - ONE_OF 
+
+		Intel® Software Guard Extension (SGX)
+		-------------------------------------------------------------------------------
+		Enables or Disables Intel® Software Guard Extensions (SGX).
+Software Controlled: SGX is disabled initially. When SGX application and ME FW driver are installed, SGX will be enabled via a UEFI OS-BIOS runtime interface.
+			0  :  Disabled
+			1  :  Enabled
+			2  :  Software Controlled    (default)
+
+[095e] - ONE_OF 
+
+		SGX Owner EPOCHs
+		-------------------------------------------------------------------------------
+		Keep or change the SGX Owner EPOCHs value. SGX sealing key is derived from Owner EPOCHs. Warning: after change the Owner EPOCH value, previously Intel SGX sealed data cannot be accessed.?Factory Default to use default Owner EPOCH value.
+New Random Owner EPOCHs to generate and use a new random Owner EPOCHs.
+User Defined Owner EPOCHs will extract customer defined EPOCHs value from EPOCH variable. 
+			0  :  Factory Default    (default)
+			1  :  New Random Owner EPOCHs
+			2  :  User Defined Owner EPOCHs
+
+[095f] - CHECK BOX 
+
+		Reset SGX Owner EPOCHs to Factory Default
+		-------------------------------------------------------------------------------
+		Reset Intel® SGX Owner EPOCHs to factory default value. Warning: after change the Owner EPOCH value, previously Intel SGX sealed data cannot be accessed.
+			0  :  No    (default)
+			1  :  Yes
+
+[0960] - ONE_OF 
+
+		SGX Reserved Memory Size
+		-------------------------------------------------------------------------------
+		Configure the SGX Reserved Memory Size.
+			0  :  AUTO    (default)
+			33554432  :  32MB
+			67108864  :  64MB
+			134217728  :  128MB
+
+[0960] - ONE_OF 
+
+		SGX Reserved Memory Size
+		-------------------------------------------------------------------------------
+		Configure the SGX Reserved Memory Size.
+			0  :  AUTO    (default)
+			33554432  :  32MB
+			67108864  :  64MB
+
+[0960] - ONE_OF 
+
+		SGX Reserved Memory Size
+		-------------------------------------------------------------------------------
+		Configure the SGX Reserved Memory Size.
+			0  :  AUTO    (default)
+			33554432  :  32MB
+
+[0969] - ONE_OF 
+
+		Thunderbolt Security Level
+		-------------------------------------------------------------------------------
+		Configure the Thunderbolt security level.?Legacy Mode - allow legacy Thunderbolt devices to auto connect.
+Unique ID - With this mode the connection manager requests connection approval from the host SW, auto approval may be given based on the Unique ID of the connecting device.
+One time saved key - With this mode the connection manager requests connection approval from the host SW, auto approval is only given if the host challenge to the device is acceptable.
+DP++ only - allow only DP sinks to be connected.
+			0  :  Legacy Mode
+			1  :  Unique ID    (default)
+			2  :  One time saved Key
+			3  :  DP++ only
+
+[093b] - CHECK BOX 
+
+		Balanced Enabled
+		-------------------------------------------------------------------------------
+		(null)
+			0  :  Disable    (default)
+			1  :  Enable
+
+[093c] - CHECK BOX 
+
+		Low Power Enabled
+		-------------------------------------------------------------------------------
+		(null)
+			0  :  Disable    (default)
+			1  :  Enable
+
+[093d] - CHECK BOX 
+
+		Max Performance Enabled
+		-------------------------------------------------------------------------------
+		(null)
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0785] - ONE_OF 
+
+		Intel® Dynamic Power Technology
+		-------------------------------------------------------------------------------
+		Configures processor power management features.
+Setting this to Off will disable Enhanced Intel SpeedStep® Technology and Intel® Turbo Boost Technology.
+			0  :  Energy Efficient Performance    (default)
+			1  :  OFF
+			2  :  Custom
+
+[07de] - CHECK BOX 
+
+		  Enhanced Intel SpeedStep® Technology
+		-------------------------------------------------------------------------------
+		Enhanced Intel SpeedStep® Technology allows the system to dynamically adjust processor voltage and core frequency, which can result in decreased average power consumption, decreased average heat production, and a quieter system.?Disabling Enhanced Intel SpeedStep® Technology will disable Intel® Turbo Boost Technology and Processor Idle State.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07df] - CHECK BOX 
+
+		  OS ACPI C2 Report
+		-------------------------------------------------------------------------------
+		Enables or Disables OS ACPI C2 Report. If enabled, BIOS will report ACPI C2 State (mapped to processor C7 or deeper C state).
+			0  :  Disable
+			1  :  Enable    (default)
+
+[078a] - ONE_OF 
+
+		  Processor Power Efficiency Policy
+		-------------------------------------------------------------------------------
+		Configures processor bias for power efficiency vs. performance.
+			0  :  High Performance    (default)
+			5  :  Balanced
+			12  :  Low Power
+
+[0669] - NUMERIC 
+
+		Package Power Limit 1 (Sustained)
+		-------------------------------------------------------------------------------
+		Intel® Turbo Boost Technology will control processor power usage to the Sustained Mode Power Limit over a moving average time window: Sustained Mode Time (specified in seconds).
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  85 
+
+[0667] - NUMERIC 
+
+		Package Power Limit 2 (Burst Mode)
+		-------------------------------------------------------------------------------
+		Intel® Turbo Boost Technology will use this power limit for a very short duration. After that, the Sustained Mode Power Limit will be used.? The recommended value is 1.3 x the Sustained Mode Power Limit.
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  85 
+
+[0668] - ONE_OF 
+
+		Package Power Time Window (Tau)
+		-------------------------------------------------------------------------------
+		Intel® Turbo Boost Technology will control processor power usage to the Sustained Mode Power Limit over a moving average time window: Sustained Mode Time (specified in seconds).
+			113  :  224
+			81  :  192
+			49  :  160
+			17  :  128
+			112  :  112
+			80  :  96
+			48  :  80
+			16  :  64    (default)
+			111  :  56
+			79  :  48
+			47  :  40
+			15  :  32
+			110  :  28
+			78  :  24
+			46  :  20
+			14  :  16
+			109  :  14
+			77  :  12
+			45  :  10
+			13  :  8
+			108  :  7
+			76  :  6
+			44  :  5
+			12  :  4
+			75  :  3
+			11  :  2
+			10  :  1
+
+[0071] - ONE_OF 
+
+		  After Power Failure
+		-------------------------------------------------------------------------------
+		Configures system behavior after AC power is lost.?If set to Stay Off, the System will stay in a power-off state after AC power is restored.
+If set to Last State, the System will return to the last power state before AC power was lost.
+If set to Power On, the System will automatically power-on after AC power is restored.
+			1  :  Stay Off    (default)
+			2  :  Last State
+			0  :  Power On
+
+[07e2] - CHECK BOX 
+
+		Deep S4/S5
+		-------------------------------------------------------------------------------
+		If Enabled, system will use less power while in S4/S5 sleep states, but will wake only via LAN, power button, or RTC alarm.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0975] - ONE_OF 
+
+		Button LED
+		-------------------------------------------------------------------------------
+		Configures Button LED functionality.
+			0  :  Power State Indicator    (default)
+			1  :  HDD Activity LED
+
+[0976] - NUMERIC 
+
+		S0 Indicator Brightness
+		-------------------------------------------------------------------------------
+		Determines Button LED brightness during S0 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[0977] - ONE_OF 
+
+		S0 Indicator Blinking Frequency
+		-------------------------------------------------------------------------------
+		Determines Button LED blinking frequency during S0 system power state.
+			0  :  1Hz
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz    (default)
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[0978] - ONE_OF 
+
+		S0 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines Button LED color during S0 system power state
+			1  :  Blue    (default)
+			2  :  Amber
+
+[0979] - NUMERIC 
+
+		S3 Indicator Brightness
+		-------------------------------------------------------------------------------
+		Determines Button LED brightness during S3 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09ad] - ONE_OF 
+
+		S3 Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines Button LED blinking behavior during S3 system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[097a] - ONE_OF 
+
+		S3 Indicator Blinking Frequency
+		-------------------------------------------------------------------------------
+		Determines Button LED blinking frequency during S0 system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[097b] - ONE_OF 
+
+		S3 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines Button LED color during S3 system power state.
+			1  :  Blue    (default)
+			2  :  Amber
+
+[09c2] - NUMERIC 
+
+		Modern Standby Indicator Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines Button LED brightness during modern standby system power state.
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09c3] - ONE_OF 
+
+		Modern Standby Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines Button LED blinking behavior during modern standby system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[09c4] - ONE_OF 
+
+		Modern Standby Indicator Blinking Frequency (Hz)
+		-------------------------------------------------------------------------------
+		Determines Button LED blinking frequency during modern standby system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[09c5] - ONE_OF 
+
+		Modern Standby Indicator Color
+		-------------------------------------------------------------------------------
+		Determines Button LED color during modern standby system power state.
+			1  :  Blue    (default)
+			2  :  Amber
+
+[097f] - NUMERIC 
+
+		Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines Button LED brightness for HDD activity.
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09b2] - ONE_OF 
+
+		Behavior
+		-------------------------------------------------------------------------------
+		Determines Button LED Behavior for HDD activity.
+			1  :  On    (default)
+			0  :  Off
+
+[0980] - ONE_OF 
+
+		Color
+		-------------------------------------------------------------------------------
+		Determines Button LED color for HDD activity.
+			1  :  Blue
+			2  :  Amber    (default)
+
+[0981] - ONE_OF 
+
+		RGB LED
+		-------------------------------------------------------------------------------
+		Configures RGB LED functionality.
+			0  :  Power State Indicator    (default)
+			1  :  HDD Activity LED
+
+[09d0] - NUMERIC 
+
+		S0 Indicator Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines RGB LED brightness during S0 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09d1] - ONE_OF 
+
+		S0 Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking behavior during S0 system power state.
+			1  :  Solid    (default)
+			2  :  Breathing
+			3  :  Pulsing
+			4  :  Strobing
+
+[09d2] - ONE_OF 
+
+		S0 Indicator Blinking Frequency (Hz)
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking frequency during S0 system power state.
+			0  :  1Hz
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz    (default)
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[09d3] - ONE_OF 
+
+		S0 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines RGB LED color during S0 system power state
+			1  :  Cyan
+			2  :  Magenta
+			3  :  Yellow
+			4  :  Blue    (default)
+			5  :  Red
+			6  :  Green
+			7  :  White
+
+[09d4] - NUMERIC 
+
+		S3 Indicator Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines RGB LED brightness during S3 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09d5] - ONE_OF 
+
+		S3 Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking behavior during S3 system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[09d6] - ONE_OF 
+
+		S3 Indicator Blinking Frequency (Hz)
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking frequency during S3 system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[09d7] - ONE_OF 
+
+		S3 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines RGB LED color during S3 system power state.
+			1  :  Cyan
+			2  :  Magenta
+			3  :  Yellow
+			4  :  Blue    (default)
+			5  :  Red
+			6  :  Green
+			7  :  White
+
+[09d8] - NUMERIC 
+
+		Modern Standby Indicator Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines RGB LED brightness during modern standby system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09d9] - ONE_OF 
+
+		Modern Standby Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking behavior during modern standby system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[09da] - ONE_OF 
+
+		Modern Standby Indicator Blinking Frequency (Hz)
+		-------------------------------------------------------------------------------
+		Determines RGB LED blinking frequency during modern standby system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+
+[09db] - ONE_OF 
+
+		Modern Standby Indicator Color
+		-------------------------------------------------------------------------------
+		Determines RGB LED color during modern standby system power state.
+			1  :  Cyan
+			2  :  Magenta
+			3  :  Yellow
+			4  :  Blue    (default)
+			5  :  Red
+			6  :  Green
+			7  :  White
+
+[09dc] - NUMERIC 
+
+		Brightness (HDD LED mode) (%)
+		-------------------------------------------------------------------------------
+		Determines RGB LED brightness for HDD activity.
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09dd] - ONE_OF 
+
+		Color (HDD LED mode)
+		-------------------------------------------------------------------------------
+		Determines RGB LED color for HDD activity.
+			1  :  Cyan
+			2  :  Magenta
+			3  :  Yellow
+			4  :  Blue    (default)
+			5  :  Red
+			6  :  Green
+			7  :  White
+
+[09de] - ONE_OF 
+
+		Behavior (HDD LED mode)
+		-------------------------------------------------------------------------------
+		Determines RGB LED Behavior for HDD activity.
+			1  :  On    (default)
+			0  :  Off
+
+[09b3] - ONE_OF 
+
+		HDD LED
+		-------------------------------------------------------------------------------
+		Configures HDD LED functionality.
+			0  :  Power State Indicator
+			1  :  HDD Activity LED    (default)
+			2  :  SW control
+
+[09b4] - NUMERIC 
+
+		S0 Indicator Brightness
+		-------------------------------------------------------------------------------
+		Determines HDD LED brightness during S0 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09b5] - ONE_OF 
+
+		S0 Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking behavior during S0 system power state.
+			1  :  Solid    (default)
+			2  :  Breathing
+			3  :  Pulsing
+			4  :  Strobing
+
+[09b6] - ONE_OF 
+
+		S0 Indicator Blinking Frequency
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking frequency during S0 system power state.
+			0  :  1Hz
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz    (default)
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+			10  :  None
+
+[09b7] - ONE_OF 
+
+		S0 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines HDD LED color during S0 system power state
+			0  :  Disable
+			1  :  Blue    (default)
+			2  :  Red
+			3  :  Green
+			4  :  Orange
+			5  :  Yellow
+			6  :  Indigo
+			7  :  Violet
+			8  :  White
+			9  :  Amber
+
+[09b8] - NUMERIC 
+
+		S3 Indicator Brightness
+		-------------------------------------------------------------------------------
+		Determines HDD LED brightness during S3 system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09b9] - ONE_OF 
+
+		S3 Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking behavior during S3 system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[09ba] - ONE_OF 
+
+		S3 Indicator Blinking Frequency
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking frequency during S3 system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+			10  :  None
+
+[09bb] - ONE_OF 
+
+		S3 Indicator Color
+		-------------------------------------------------------------------------------
+		Determines HDD LED color during S3 system power state.
+			0  :  Disable
+			1  :  Blue    (default)
+			2  :  Red
+			3  :  Green
+			4  :  Orange
+			5  :  Yellow
+			6  :  Indigo
+			7  :  Violet
+			8  :  White
+			9  :  Amber
+
+[09c6] - NUMERIC 
+
+		Modern Standby Indicator Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines HDD LED brightness during Modern Standby system power state
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09c7] - ONE_OF 
+
+		Modern Standby Indicator Blinking Behavior
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking behavior during Modern Standby system power state.
+			1  :  Solid
+			2  :  Breathing    (default)
+			3  :  Pulsing
+			4  :  Strobing
+
+[09c8] - ONE_OF 
+
+		Modern Standby Indicator Blinking Frequency (Hz)
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking frequency during Modern Standby system power state.
+			0  :  1Hz    (default)
+			1  :  0.9Hz
+			2  :  0.8Hz
+			3  :  0.7Hz
+			4  :  0.6Hz
+			5  :  0.5Hz
+			6  :  0.4Hz
+			7  :  0.3Hz
+			8  :  0.2Hz
+			9  :  0.1Hz
+			10  :  None
+
+[09c9] - ONE_OF 
+
+		Modern Standby Indicator Color
+		-------------------------------------------------------------------------------
+		Determines HDD LED color during Modern Standby system power state.
+			0  :  Disable
+			1  :  Blue    (default)
+			2  :  Red
+			3  :  Green
+			4  :  Orange
+			5  :  Yellow
+			6  :  Indigo
+			7  :  Violet
+			8  :  White
+			9  :  Amber
+
+[09bc] - NUMERIC 
+
+		Brightness (%)
+		-------------------------------------------------------------------------------
+		Determines HDD LED brightness for HDD activity.
+		Default Value is 50. 
+			 Minimum Value :  0 
+			 Maximum Value :  100 
+
+[09be] - ONE_OF 
+
+		Behavior
+		-------------------------------------------------------------------------------
+		Determines HDD LED blinking behavior for HDD activity.
+			1  :  On    (default)
+			0  :  Off
+
+[09bd] - ONE_OF 
+
+		Color
+		-------------------------------------------------------------------------------
+		Determines HDD LED color for HDD activity.
+			0  :  Disable
+			1  :  Blue
+			2  :  Red
+			3  :  Green
+			4  :  Orange    (default)
+			5  :  Yellow
+			6  :  Indigo
+			7  :  Violet
+			8  :  White
+
+[0072] - ONE_OF 
+
+		  Wake on LAN from S4/S5
+		-------------------------------------------------------------------------------
+		Configures behavior when Wake on LAN packet is received during S4/S5.
+Wake on LAN must also be enabled in OS LAN driver.?Stay Off:
+System will not wake.
+
+Power On - Normal Boot:
+System will wake and use normal boot order.
+
+Power On - PXE Boot:
+System will wake and attempt boot to PXE.
+			0  :  Stay Off
+			2  :  Power On - Normal Boot    (default)
+			3  :  Power On - PXE Boot
+
+[07e3] - CHECK BOX 
+
+		  Wake System from S5
+		-------------------------------------------------------------------------------
+		Enables or Disables Wake System from S5.
+If Enabled, system will wake at the selected date/time via RTC alarm.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[091d] - ONE_OF 
+
+		Recurrence
+		-------------------------------------------------------------------------------
+		Select Daily/Weekly/Monthly to wake the system.
+			0  :  Daily
+			1  :  Weekly
+			2  :  Monthly    (default)
+
+[091e] - CHECK BOX 
+
+		Sunday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Sunday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[091f] - CHECK BOX 
+
+		Monday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Monday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0920] - CHECK BOX 
+
+		Tuesday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Tuesday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0921] - CHECK BOX 
+
+		Wednesday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Wednesday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0922] - CHECK BOX 
+
+		Thursday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Thursday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0923] - CHECK BOX 
+
+		Friday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Friday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0924] - CHECK BOX 
+
+		Saturday
+		-------------------------------------------------------------------------------
+		If enabled, system will wake at the selected time via RTC alarm on every Saturday.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[010c] - NUMERIC 
+
+		  Wakeup Date
+		-------------------------------------------------------------------------------
+		Select day of each month to wake the system.  Select 0 for daily wakeup.
+		Default Value is 1. 
+			 Minimum Value :  0 
+			 Maximum Value :  31 
+
+[010e] - NUMERIC 
+
+		  Wakeup Hour
+		-------------------------------------------------------------------------------
+		Select wakeup hour in 24-hour format.  For example, 15 means 3 PM.
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  23 
+
+[010f] - NUMERIC 
+
+		  Wakeup Minute
+		-------------------------------------------------------------------------------
+		Select wakeup minute.
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  59 
+
+[010a] - NUMERIC 
+
+		  Wakeup Second
+		-------------------------------------------------------------------------------
+		Select wakeup second.
+		Default Value is 0. 
+			 Minimum Value :  0 
+			 Maximum Value :  59 
+
+[0955] - CHECK BOX 
+
+		Wake from Sleep State via CIR
+		-------------------------------------------------------------------------------
+		Enables or Disables Wake on Enhanced Consumer Infrared (CIR) from S3/Modern Standby sleep
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0956] - CHECK BOX 
+
+		Wake from S4 and S5 via CIR
+		-------------------------------------------------------------------------------
+		Enable or Disables Wake on Enhanced Consumer Infrared (CIR) from (S4 and S5) system off state.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[091b] - CHECK BOX 
+
+		USB S4/S5 Power
+		-------------------------------------------------------------------------------
+		Enables or Disables the USB Port power in S4/S5 state. This does not affect USB charging ports. 
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0933] - CHECK BOX 
+
+		Wake on USB from S5
+		-------------------------------------------------------------------------------
+		Enables or Disables Wake on USB from S5 state
+			0  :  Disable    (default)
+			1  :  Enable
+
+[093e] - CHECK BOX 
+
+		  PCIe ASPM Support
+		-------------------------------------------------------------------------------
+		Configures PCI Express (PCIe) Active State Power Management (ASPM).
+Tradeoffs involve power usage, performance, and device/driver compatibility.?If set to Disable, ASPM support is disabled for all PCIe devices.
+If set to Enable, ASPM support is enabled for all PCIe devices.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07e4] - CHECK BOX 
+
+		  Native ACPI OS PCIe Support
+		-------------------------------------------------------------------------------
+		Enable for power savings and performance improvements.
+Note: Not all PCIe devices are compatible with this feature.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07e5] - CHECK BOX 
+
+		  Flash Update Sleep Delay
+		-------------------------------------------------------------------------------
+		If set to Enable, the system will sleep for 20 seconds during the flash update power cycle.
+Enabling this feature may increase compatibility with power supplies.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07eb] - CHECK BOX 
+
+		UEFI Boot
+		-------------------------------------------------------------------------------
+		If Enabled, BIOS will attempt to boot via UEFI before using the legacy boot sequence.
+UEFI Boot must be enabled in order to boot to a drive larger than 2 TB (terabytes).?If both UEFI Boot and Legacy Boot are enabled, BIOS will attempt to boot via UEFI before using the legacy boot sequence.
+Enabling Secure Boot will also enable UEFI Boot and disable Legacy Boot.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[08f8] - ORDERED_LIST 
+
+		Boot Drive Order
+		-------------------------------------------------------------------------------
+		Select the boot order for all detected bootable devices.
+			1  :  D
+			2  :  D
+			3  :  D
+			4  :  D
+			5  :  D
+			6  :  D
+			7  :  D
+			8  :  D
+			9  :  D
+			10  :  D
+			11  :  D
+			12  :  D
+			13  :  D
+			14  :  D
+			15  :  D
+
+[0846] - CHECK BOX 
+
+		Legacy Boot
+		-------------------------------------------------------------------------------
+		If Enabled, BIOS can attempt to boot via the legacy (non-UEFI) boot sequence.?If both UEFI Boot and Legacy Boot are enabled, BIOS will attempt to boot via UEFI before using the legacy boot sequence.
+Enabling Secure Boot will also enable UEFI Boot and disable Legacy Boot.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[007f] - ORDERED_LIST 
+
+		Boot Drive Order
+		-------------------------------------------------------------------------------
+		Select the boot order for all detected bootable devices.
+			1  :  Legacy Floppy
+			2  :  D
+			3  :  D
+			4  :  D
+			5  :  D
+			6  :  D
+			7  :  D
+			8  :  D
+			9  :  D
+			10  :  D
+			11  :  D
+			12  :  D
+			13  :  D
+			14  :  D
+			15  :  D
+
+[087e] - CHECK BOX 
+
+		Fast Boot
+		-------------------------------------------------------------------------------
+		If Enabled, Boot from Network/Optical/Removable Devices and RAID configuration will be disabled.
+In addition, Video and USB devices (keyboards and drives) will not be available until after OS boot.?This feature cannot be enabled while a User Password or Hard Disk Drive Password is installed.
+This feature does not affect USB and video capabilities after OS boot.
+
+In order to disable Fast Boot without entering BIOS Setup:
+Power down the system, then hold down the power button until the system beeps.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07ea] - CHECK BOX 
+
+		Boot USB Devices First
+		-------------------------------------------------------------------------------
+		If Enabled, the BIOS will attempt to boot to supported USB devices before any other devices.
+If Disabled, the normal boot order will be used.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[084d] - CHECK BOX 
+
+		Boot Network Devices Last
+		-------------------------------------------------------------------------------
+		If Enabled, Network devices will always be placed after non-Network devices in the boot priority.
+If Disabled, Network devices can be placed at any position in the boot priority, but will default to last.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[084e] - CHECK BOX 
+
+		Unlimited Boot to Network Attempts
+		-------------------------------------------------------------------------------
+		If Enabled, network devices will receive unlimited boot attempts after the normal boot order has been exhausted.
+If Disabled, each boot device will only receive a single boot attempt.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07ec] - CHECK BOX 
+
+		BIOS Setup Auto-Entry
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will halt and prompt to boot normally or enter Setup.
+This must be set to Disable to allow OS boot without user intervention.?This feature is not available while Fast Boot USB Optimization is set to Enable.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07ed] - CHECK BOX 
+
+		Startup Sound
+		-------------------------------------------------------------------------------
+		If enabled, BIOS will play the Intel® sound mark (about 3 seconds long) via onboard audio during each boot.
+BIOS may extend boot time slightly if necessary to finish playing the sound.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[083f] - CHECK BOX 
+
+		Internal UEFI Shell
+		-------------------------------------------------------------------------------
+		Enables or Disables the Internal UEFI Shell.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07e9] - CHECK BOX 
+
+		USB
+		-------------------------------------------------------------------------------
+		Enables or Disables the ability to boot from supported USB Devices.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[096b] - CHECK BOX 
+
+		Thunderbolt USB Boot
+		-------------------------------------------------------------------------------
+		Enabled allows boot from Usb devices which is present behind Thunderbolt
+			0  :  Disable
+			1  :  Enable    (default)
+
+[096c] - CHECK BOX 
+
+		Thunderbolt Boot
+		-------------------------------------------------------------------------------
+		Enabled allows boot from Bootable devices which is present behind Thunderbolt
+			0  :  Disable    (default)
+			1  :  Enable
+
+[096d] - CHECK BOX 
+
+		Ignore Thunderbolt Option Rom
+		-------------------------------------------------------------------------------
+		Determine if BIOS runs the Option ROM on the device (SAT card, etc.) behind the Thunderbolt.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07e6] - CHECK BOX 
+
+		Optical
+		-------------------------------------------------------------------------------
+		Enables or Disables the ability to boot to Optical Devices.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0931] - ONE_OF 
+
+		Network Boot
+		-------------------------------------------------------------------------------
+		Enables or Disables the ability to boot from the network.  Note: UEFI network boot option is automatically disabled if Legacy Boot setting is enabled.
+			0  :  Disable
+			3  :  UEFI PXE & iSCSI
+
+[0931] - ONE_OF 
+
+		Network Boot
+		-------------------------------------------------------------------------------
+		Enables or Disables the ability to boot from the network.  Note: UEFI network boot option is automatically disabled if Legacy Boot setting is enabled.
+			0  :  Disable
+			1  :  Legacy PXE    (default)
+
+[07d2] - CHECK BOX 
+
+		Failsafe Watchdog
+		-------------------------------------------------------------------------------
+		After a boot failure, uses BIOS defaults to allow the system to boot back into BIOS Setup while retaining the last used BIOS Setup values set by the user.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0980] - CHECK BOX 
+
+		EC WatchDog Timer
+		-------------------------------------------------------------------------------
+		EC WatchDog Timer
+			0  :  Disable    (default)
+			1  :  Enable
+
+[099b] - CHECK BOX 
+
+		BIOS Self Recovery
+		-------------------------------------------------------------------------------
+		BIOS Self recovery happens once Failsafe Watchdog is triggered. BIO file is required.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0932] - CHECK BOX 
+
+		Suppress Alert Messages At Boot
+		-------------------------------------------------------------------------------
+		If enabled, BIOS will display POST error messages for five seconds without requiring user action (keyboard input) before continuing to boot. 
+Subsequent error messages of the same type will be suppressed from the display but recorded in the Event Log.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0002] - ONE_OF 
+
+		  Expansion Card Text
+		-------------------------------------------------------------------------------
+		Configures display of text from PCI option ROMs during POST.?If set to Enable, BIOS will display text from any PCI option ROMs during POST.
+If set to Disable, BIOS will display text only from mass-storage PCI option ROMs during POST.
+If set to Hide All, BIOS will display no text from PCI option ROMs during POST.
+			0  :  Disable    (default)
+			1  :  Enable
+			2  :  Hide All
+
+[0823] - CHECK BOX 
+
+		  Keyboard Ready Beep
+		-------------------------------------------------------------------------------
+		If enabled, BIOS will beep once during POST when ready for keyboard input.
+BIOS will beep only if both keyboard and video are detected. Beep is played via onboard audio.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[07f1] - CHECK BOX 
+
+		  POST Function Hotkeys Displayed
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will display Function key prompts during POST.  Function key input will still be accepted even if prompts are disabled.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07f2] - CHECK BOX 
+
+		    Display F2 to Enter Setup
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will display
+"F2 to Enter Setup" prompt.  F2 key input will still be accepted if this prompt is disabled.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07f3] - CHECK BOX 
+
+		    Display F7 to Update BIOS
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will display
+"F7 to Update BIOS" prompt.  F7 key input will still be accepted if this prompt is disabled.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07f5] - CHECK BOX 
+
+		    Display F10 to Enter Boot Menu
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will display "F10 to Enter Boot Menu" prompt.  F10 key input will still be accepted if this prompt is disabled.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[07f6] - CHECK BOX 
+
+		    Display F12 for Network Boot
+		-------------------------------------------------------------------------------
+		If set to Enable, BIOS will display "F12 for Network Boot" prompt.  F12 key input will still be accepted if this prompt is disabled.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0847] - CHECK BOX 
+
+		Secure Boot
+		-------------------------------------------------------------------------------
+		If Enabled, BIOS will only boot to trusted operating system images.
+Secure Boot is supported only via UEFI Boot.?Enabling Secure Boot will allow boot only to trusted operating system installations.
+Enabling Secure Boot will also enable UEFI Boot and disable Legacy Boot.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[08f9] - CHECK BOX 
+
+		Install Intel Platform Key
+		-------------------------------------------------------------------------------
+		Installs a Secure Boot Platform Key from Intel during next boot.
+See Advanced Help Text for more information.?This feature can be used if an OEM-generated Platform Key is not available, and the installed processor does not support Generate New Platform Key.
+			0  :  Disable
+			1  :  Enable    (default)
+
+[0848] - CHECK BOX 
+
+		Force Secure Boot Defaults
+		-------------------------------------------------------------------------------
+		Restores factory default Secure Boot databases during next boot, placing the system in Standard Mode.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0849] - CHECK BOX 
+
+		Clear Secure Boot Data
+		-------------------------------------------------------------------------------
+		Clears Secure Boot databases (PKpub, KEK, db, and dbx) during next boot, placing the system in Custom Mode.?Required to install a trusted operating system not supported by the factory default Secure Boot database.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[084a] - CHECK BOX 
+
+		Generate New Platform Key
+		-------------------------------------------------------------------------------
+		Generates a new Secure Boot Platform Key during next boot. The private half of the Platform Key is discarded.
+			0  :  Disable    (default)
+			1  :  Enable
+
+[0833] - ONE_OF 
+
+		Platform Id
+		-------------------------------------------------------------------------------
+		Platform Id
+			0  :  Not Specified    (default)
+			1  :  DNKBLi35
+
+*******************************************************************************
+				End of Report
+*******************************************************************************
+
+Copyright © 2013, Intel Corporation. All rights reserved. 
+Intel, Pentium, and Celeron are trademarks or registered trademarks of Intel
+Corporation or its subsidiaries in the United States and other countries.

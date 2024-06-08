@@ -1,0 +1,49 @@
+Intel NUC NUC8i7BEH
+===================
+
+  Sandy Bridge = All Core ix-3xxx (HD Graphics 3000)
+  Ivy Bridge   = All Core ix-3xxx (HD Graphics 4000)
+  Haswell      = All Core ix-4xxx (HD Graphics 4600)
+  Broadwell    = All Core ix-5xxx (Iris Pro Graphics 6200)
+  Skylake      = All Core ix-6xxx (HD Graphics 5xx)
+  Kaby Lake    = All Core ix-7xxx (UHD/Iris Plus Graphics 6xx)
+* Coffee Lake  = All Core ix-8xxx (UHD/Iris Plus Graphics 6xx)
+
+Generation: Bean Canyon (2018)
+Specifications: https://ark.intel.com/products/126140/Intel-NUC-Kit-NUC8i7BEH
+Downloads: https://downloadcenter.intel.com/product/126140/Intel-NUC-Kit-NUC8i7BEH
+BIOS Recovery Update Instructions: https://www.intel.com/content/www/us/en/support/articles/000005532/mini-pcs.html
+BIOS Corruption Clear CMOS: https://www.intel.com/content/www/us/en/support/articles/000005805/mini-pcs.html
+
+Generation: Coffee Lake (2018)
+CPU: Intel Core i7-8559U @ 2.70 GHz up to 4.50 GHz / 4 Cores / 8 Threads
+GPU: Intel Iris Plus Graphics 655 / 300 MHz up to 1.20 GHz
+URL: https://ark.intel.com/products/137979/Intel-Core-i7-8559U-Processor-8M-Cache-up-to-4-50-GHz
+
+Geekbench:
+V4 Scores: https://browser.geekbench.com/v4/cpu/search?q=Core+i7-8559U
+V5 Scores: https://browser.geekbench.com/v5/cpu/search?q=Core+i7-8559U
+
+Mac Model: iMac16,2
+CPU: i7-5675R @ 3.10 GHz up to 3.60 GHz / 4 Cores / 8 Threads
+GPU: Intel Iris Pro 6200
+Everymac: https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac16,2
+Board ID: FFE5EF870D7BA81A
+BIOS Revision: IM162.88Z.0221.B00.1809171530
+
+Mac Model: iMac18,1
+CPU: i5-7360U @ 2.30 GHz up to 3.60 GHz / 2 Cores / 4 Threads
+GPU: Iris Plus Graphics 640
+Everymac: https://everymac.com/ultimate-mac-lookup/?search_keywords=iMac18,1
+Board ID: 4B682C642B45593E
+BIOS Revision: IM181.88Z.F000.B00.1809171524
+
+Mac Model: Macmini8,1
+CPU: i7-8700B @ 3.20 GHz up to 4.60 GHz / 6 Cores / 12 Threads
+GPU: Intel UHD Graphics 630
+Everymac: https://everymac.com/ultimate-mac-lookup/?search_keywords=Macmini8,1
+Board ID: 7BA5B2DFE22DDD8C
+BIOS Revision: MM81.88Z.F000.B00.1809171422
+BIOS Revision: MM81.88Z.F000.B00.1907261958
+BIOS Revision: MM81.88Z.F000.B00.2001052107
+BIOS Revision: MM81.88Z.F000.B00.2005132145

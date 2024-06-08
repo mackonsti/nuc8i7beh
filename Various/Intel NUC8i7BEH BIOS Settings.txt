@@ -1,0 +1,61 @@
+Intel NUC8i7BEH BIOS Settings
+=============================
+
+    Press F10 to enter Boot Menu if needed.
+    Press F2 to enter Visual BIOS setup.
+    Press F9 to load defaults.
+    Downgrade: https://www.intel.com/content/www/us/en/support/articles/000005532/mini-pcs.html
+
+
+Required BIOS Settings
+======================
+
+First click on "Advanced" button, then proceed to the following changes:
+
+MAIN page:
+"Event Log" section --> Disable "Event Logging"
+
+DEVICES page:
+"USB" section             --> "USB Configuration" panel             --> "Portable Device Charging Mode" set to "Off"
+"Video" section           --> "Video Configuration" panel           --> "IGD Minimum Memory" set to 64MB (default)
+"Video" section           --> "Video Configuration" panel           --> "IGD Aperture Size" set to 256MB (default)
+"Onboard Devices" section --> "Onboard Devices Configuration" panel --> Disable "WLAN" (*)
+"Onboard Devices" section --> "Onboard Devices Configuration" panel --> Disable "Bluetooth" (*)
+"Onboard Devices" section --> "Onboard Devices Configuration" panel --> Disable "SD Card"
+"Onboard Devices" section --> "Legacy Device Configuration" panel   --> Disable "Enhanced Consumer IR" (default)
+"Onboard Devices" section --> "Legacy Device Configuration" panel   --> Disable "HDMI CEC Control"
+
+SECURITY page:
+"Security Features" section --> Disable "Intel VT for Directed I/O (VT-d)"
+"Security Features" section --> Disable "Intel Software Guard Extension (SGX)"
+"Security Features" section --> Set "Thunderbolt Security Level" to "Legacy Mode"
+
+POWER page:
+"Secondary Power Settings" section --> Set "Wake on LAN form S4/S5" to "Stay Off"
+"Secondary Power Settings" section --> Disable "PCIe ASPM Support" (**)
+
+BOOT page:
+"Boot Priority" section      --> "UEFI Boot Priority" panel    --> Enable  "UEFI Boot" (default)
+"Boot Priority" section      --> "Legacy Boot Priority" panel  --> Disable "Legacy Boot"
+"Boot Configuration" section --> "UEFI Boot" panel             --> Disable "Fast Boot" (default)
+"Boot Configuration" section --> "UEFI Boot" panel             --> Enable  "Boot USB Devices First"
+"Boot Configuration" section --> "UEFI Boot" panel             --> Disable "Boot Network Devices Last"
+"Boot Configuration" section --> "UEFI Boot" panel             --> Disable "Startup Sound" (default)
+"Boot Devices" section       --> "Boot Devices" panel          --> Disable "Thunderbolt Boot"
+"Boot Devices" section       --> "Boot Devices" panel          --> Disable "Optical"
+"Boot Devices" section       --> "Boot Devices" panel          --> Disable "Network Boot"
+"Boot Devices" section       --> "Boot Display Config" section --> Disable "Display F7 to Update BIOS" option
+"Secure Boot" section        --> "Secure Boot Config" panel    --> Disable "Secure Boot" (default)
+
+Press F10 to save and exit.
+
+
+CURRENT BIOS:  BECFL357.86A.0087.2020.1209.1115
+PREVIOUS BIOS: BECFL357.86A.0085.2020.1007.1917
+PREVIOUS BIOS: BECFL357.86A.0079.2020.0424.1838
+PREVIOUS BIOS: BECFL357.86A.0078.2020.0309.1538
+PREVIOUS BIOS: BECFL357.86A.0056.2018.1128.1717
+
+(*) Currently there are drivers that support these devices found at: https://github.com/OpenIntelWireless/itlwm/
+(**) It was reported to be needed for Gigabit LAN stability with older IntelMausiEthernet driver.
+(!) No Ethernet after wake: Since we disable "Wake on LAN" in BIOS, we DO NOT enable "Wake for Ethernet network access" in System Preferences --> Energy Saver.
