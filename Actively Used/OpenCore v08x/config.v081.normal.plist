@@ -1190,7 +1190,7 @@
 			</dict>
 			<dict>
 				<key>Arguments</key>
-				<string></string>
+				<string>--preserve-boot</string>
 				<key>Comment</key>
 				<string>Configurable NVRAM reset entry to the boot picker menu</string>
 				<key>Enabled</key>
