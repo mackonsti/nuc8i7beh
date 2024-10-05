@@ -1,6 +1,6 @@
 # Actively Used Files
 
-:white_check_mark: Currently running **MacOS 10.13 Ventura** since OpenCore **0.9.9**.
+:white_check_mark: Currently running **MacOS 14 Sonoma** since OpenCore **1.0.0**.
 
 **Table Of Contents**
 - [Current NUC BIOS Revision](#current-nuc-bios-revision)
@@ -39,7 +39,7 @@ The original configuration, especially setting the "Quirks" to the correct value
 
 * **config.emergency.plist** → Shows boot options (i.e. picker) with **all** Auxiliary tools displayed; after a brief time-out, continues **verbose** `-v` booting to default drive; Wi-Fi and BTLE kexts are disabled; debug logging is enabled, including boot arguments being present. Keys `HideAuxiliary` set to false, `ShowPicker` set to true, `Timeout` set to 5 seconds. Additionally, `SecureBootModel` is disabled, `PanicNoKextDump`, `AppleDebug`, `ApplePanic`, `AllowNvramReset`, `AllowSetDefault` and `AllowToggleSip` are now enabled. Special boot arguments `keepsyms=1`, `debug=0x100` and `msgbuf=1048576` are set. **This file is notably used for USB installers.** Please note that the argument `npci=0x2000` has been recently removed.
 
-All configuration files have been **validated** with `ocvalidate` tool that has been included in the OpenCore releases since its version 0.7.6.
+All configuration files have been **validated** with `ocvalidate` tool that has been included in the OpenCore releases (since its 0.7.6 version).
 
 ## Notable Differences in Configurations
 
@@ -134,7 +134,7 @@ This NUC is embedding the **Intel Iris Plus Graphics 655** display controller wi
 
 It is thus important to _force_ a `device-id` and an `ig-platform-id` value in OpenCore that reflect this Mac Mini IGPU hardware, thus matching this NUC hardware. This leads to the safe use of `device-id` value `0x3EA50000` and `AAPL,ig-platform-id` as `0x3EA50004` (byte-swapped) thanks to Hackintool. See **DeviceProperties** at [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake-plus.html#deviceproperties).
 
-:warning: Starting from OpenCore 0.8.4 configuration, a more precise port definition was added in order to correctly identify the embedded HDMI port.
+:warning: Starting from OpenCore 0.8.4 configuration, a more precise port definition was generated in order to correctly identify the integrated rear HDMI port.
 
 3. The following custom SSDTs are included, defined and enabled:
 

@@ -176,7 +176,7 @@ Read more at [Intel® HD Graphics FAQs](https://github.com/acidanthera/WhateverG
 | HS10              | N/A               | Internal BTLE port | Primary XHCI   |
 | HS01              | SS01              | Rear USB-C socket  | Secondary XHCI |
 
-The above active and working USB ports are listed in Hackintool when the two *internal* (USB 2.0) headers and **Consumer IR** are all _disabled_ in [BIOS](BIOS/) and when **all unused or non-referenced USB ports** are removed. In any other situation, ports such as HS05, HS06, HS07, HS08, HS09, USR1, USR2, SS05 and SS06 may be listed. All ports above are defined in `USBPorts.kext` according to their _electrical_ connector.
+The above active and working USB ports are listed in Hackintool while the two *internal* (USB 2.0) headers and **Consumer IR** are all _disabled_ in [BIOS](BIOS/) and **all unused or non-referenced USB ports** are removed. In any other situation, ports such as HS05, HS06, HS07, HS08, HS09, USR1, USR2, SS05 and SS06 may be listed. All ports above are defined in `USBPorts.kext` according to their _electrical_ connector.
 
 ![USBPorts](Various/USBPorts.png)
 
