@@ -129,7 +129,7 @@ Alternatively, if `ShowPicker` is disabled or `Timeout` set to 0, keep pressing 
 * Embedded Intel WLAN module works with [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm/releases);
 * Embedded Intel BTLE module detected with [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases);
 * CPU fan readings work with `ec-device` as `Intel_EC_V8` with [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases);
-* Integrated SD Card reader is **not** compatible; it is disabled in BIOS;
+* Integrated SD Card reader `RTS522A` - should work with [@0xFireWolf](https://github.com/0xFireWolf)'s [RealtekCardReader](https://github.com/0xFireWolf/RealtekCardReader#supported-devices)
 * Power Management is present and active as `X86PlatformPlugin` is attached to `PR00` in IORegistry;
 * Sleep/Wake both work without issues; see "Power" section in [Hackintool](https://github.com/headkaze/Hackintool/releases);
 * Both NVMe and SSD SATA interfaces work with no effort nor kext needed.
