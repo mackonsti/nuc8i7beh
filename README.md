@@ -99,8 +99,9 @@ BIOS Revision: MM81.88Z.F000.B00.2111162120<br/>
 **BTLE:** Intel Bluetooth 5.1 (Embedded Module) [8087:0aaa]<br/>
 **NVMe:** Sabrent Rocket NVMe M.2 512GB (Model SB-ROCKET-512) [[1987:5012]](https://pci-ids.ucw.cz/read/PC/1987/5012)<br/>
 **Previous NVMe:** Samsung EVO 970 NVMe M.2 1TB (Model MZ-V7E1T0BW) [[144d:a808]](https://pci-ids.ucw.cz/read/PC/144d/a808)<br/>
-**SSD:** Samsung EVO 860 SATA 1TB (Model MZ-76E1T0B/EU)<br/>
+**SATA:** Samsung EVO 860 SATA 1TB SSD (Model MZ-76E1T0B/EU)<br/>
 **Thunderbolt:** Intel JHL6340 Thunderbolt 3 Controller (Alpine Ridge 2C 2016) [[8086:15db]](https://pci-ids.ucw.cz/read/PC/8086/15db)<br/>
+**SD:** Realtek Semiconductor RTS522A PCI Express Card Reader [[10ec:522a]](https://pci-ids.ucw.cz/read/PC/10ec/522a)<br/>
 **Intel Product Compatibility Tool:** see [Intel website](https://compatibleproducts.intel.com/ProductDetails?EPMID=126140)<br/>
 
 ## Required BIOS Settings
@@ -129,7 +130,7 @@ Alternatively, if `ShowPicker` is disabled or `Timeout` set to 0, keep pressing 
 * Embedded Intel WLAN module works with [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm/releases);
 * Embedded Intel BTLE module detected with [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases);
 * CPU fan readings work with `ec-device` as `Intel_EC_V8` with [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases);
-* Integrated SD Card reader is **not** compatible; it is disabled in BIOS;
+* Integrated Realtek SD card reader now gets support with [RealtekCardReader](https://github.com/0xFireWolf/RealtekCardReader/releases);
 * Power Management is present and active as `X86PlatformPlugin` is attached to `PR00` in IORegistry;
 * Sleep/Wake both work without issues; see "Power" section in [Hackintool](https://github.com/headkaze/Hackintool/releases);
 * Both NVMe and SSD SATA interfaces work with no effort nor kext needed.
