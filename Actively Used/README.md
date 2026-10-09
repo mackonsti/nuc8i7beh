@@ -166,6 +166,7 @@ The ACPI code and justification for each custom SSDT is described in more detail
 * [SMCSuperIO.kext](https://github.com/acidanthera/VirtualSMC/releases)
 * [VirtualSMC.kext](https://github.com/acidanthera/VirtualSMC/releases)
 * [WhateverGreen.kext](https://github.com/acidanthera/WhateverGreen/releases)
+* [RealtekCardReader.kext](https://github.com/0xFireWolf/RealtekCardReader/releases) → removed
 * USBPorts.kext
 
 :warning: Starting from OpenCore 0.9.4 configuration, this NUC will be running **macOS Monterey** and a major change in the loaded kexts has taken place, namely the replacement of `IntelBluetoothInjector.kext` with `BlueToolFixup.kext` so please be aware.
